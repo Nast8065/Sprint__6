@@ -41,7 +41,7 @@ class TestLogos:
         # Проверяем заголовок страницы
         main_page.wait_for_page_title_loaded()
         page_title = main_page.get_page_title()
-        assert "дзен" in page_title or "Яндекс" in page_title or "Yandex" in page_title, \
+        assert "Дзен" in page_title or "Яндекс" in page_title or "Yandex" in page_title, \
             f"Заголовок страницы не содержит ожидаемый текст: {page_title}"
 
     @allure.title('Проверка перенаправления по логотипу Самоката со страницы заказа')
@@ -74,6 +74,6 @@ class TestLogos:
         # Проверяем href атрибуты
         scooter_href = header_page.get_logo_href('scooter')
         yandex_href = header_page.get_logo_href('yandex')
-        
+
         assert scooter_href is not None, "Логотип Самоката не имеет href атрибута"
         assert yandex_href is not None, "Логотип Яндекса не имеет href атрибута"
